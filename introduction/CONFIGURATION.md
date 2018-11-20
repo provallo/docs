@@ -1,3 +1,5 @@
+# Configuration
+
 The default configuration is located at `src/Config/Default.php`. It can be extended in `config.php` returning a simple array containing the data that should be replaced by `array_replace_recursive` (see `src/Config.php`)
 
 ```php

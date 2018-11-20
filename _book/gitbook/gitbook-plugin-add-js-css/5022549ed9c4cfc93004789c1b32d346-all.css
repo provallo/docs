@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+.book .book-summary nav ul.summary li.divider {
+  display: none;
+}
+.book .book-summary nav ul.summary li a.gitbook-link {
+  display: none;
+}
+.book .book-body .body-inner .book-header {
+  display: none;
+}
+.book .book-body .body-inner .page-wrapper .page-inner {
+  max-width: 1200px;
+}
+/*# sourceMappingURL=all.css.map */

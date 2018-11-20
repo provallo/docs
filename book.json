@@ -1,0 +1,14 @@
+{
+  "title": "ProVallo Documentation",
+  "author": "Tommy <tyurderi@yahoo.de>",
+  "plugins": [
+    "add-js-css"
+  ],
+  "pluginsConfig": {
+    "add-js-css": {
+      "css": [
+        "./_assets/css/all.css"
+      ]
+    }
+  }
+}

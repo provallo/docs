@@ -1,0 +1,311 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Configuration · ProVallo Documentation</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Tommy <tyurderi@yahoo.de>">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-add-js-css/5022549ed9c4cfc93004789c1b32d346-all.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="INSTALLATION.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="INSTALLATION.html">
+            
+                <a href="INSTALLATION.html">
+            
+                    
+                    Installation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.1.2" data-path="CONFIGURATION.html">
+            
+                <a href="CONFIGURATION.html">
+            
+                    
+                    Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Configuration</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="configuration">Configuration</h1>
+<p>The default configuration is located at <code>src/Config/Default.php</code>. It can be extended in <code>config.php</code> returning a simple array containing the data that should be replaced by <code>array_replace_recursive</code> (see <code>src/Config.php</code>)</p>
+<pre><code class="lang-php">[
+    <span class="hljs-string">&apos;config&apos;</span>   =&gt; [
+        <span class="hljs-comment">// Controller modules (more information later)</span>
+        <span class="hljs-string">&apos;modules&apos;</span>   =&gt; [],
+        <span class="hljs-comment">// The view/themes configuration (paths are relative to app.path)</span>
+        <span class="hljs-string">&apos;view&apos;</span>      =&gt; [
+            <span class="hljs-string">&apos;theme_path&apos;</span> =&gt; <span class="hljs-string">&apos;themes/&apos;</span>,
+            <span class="hljs-string">&apos;cache_path&apos;</span> =&gt; <span class="hljs-string">&apos;cache/twig/&apos;</span>
+        ],
+        <span class="hljs-comment">// The default database configuration (currently only MySQL is supported)</span>
+        <span class="hljs-string">&apos;database&apos;</span>  =&gt; [
+            <span class="hljs-string">&apos;host&apos;</span> =&gt; <span class="hljs-string">&apos;%database.host%&apos;</span>,
+            <span class="hljs-string">&apos;shem&apos;</span> =&gt; <span class="hljs-string">&apos;%database.shem%&apos;</span>,
+            <span class="hljs-string">&apos;user&apos;</span> =&gt; <span class="hljs-string">&apos;%database.user%&apos;</span>,
+            <span class="hljs-string">&apos;pass&apos;</span> =&gt; <span class="hljs-string">&apos;%database.pass%&apos;</span>
+        ],
+        <span class="hljs-comment">// Basic app configuration</span>
+        <span class="hljs-string">&apos;app&apos;</span>       =&gt; [
+            <span class="hljs-comment">// The absolute root path</span>
+            <span class="hljs-string">&apos;path&apos;</span>       =&gt; realpath(<span class="hljs-keyword">__DIR__</span> . <span class="hljs-string">&apos;/../..&apos;</span>) . <span class="hljs-string">&apos;/&apos;</span>,
+            <span class="hljs-comment">// The cache path (relative to app.path)</span>
+            <span class="hljs-string">&apos;cache_path&apos;</span> =&gt; <span class="hljs-string">&apos;cache/&apos;</span>
+        ],
+        <span class="hljs-comment">// The plugins configuration</span>
+        <span class="hljs-string">&apos;plugin&apos;</span>    =&gt; [
+            <span class="hljs-comment">// The plugin path is relative to the app.path</span>
+            <span class="hljs-string">&apos;path&apos;</span> =&gt; <span class="hljs-string">&apos;ext/&apos;</span>
+        ],
+        <span class="hljs-comment">// The http-cache configuration</span>
+        <span class="hljs-string">&apos;httpCache&apos;</span> =&gt; [
+            <span class="hljs-string">&apos;enabled&apos;</span> =&gt; <span class="hljs-keyword">true</span>
+        ],
+        <span class="hljs-comment">// The cookie configuration</span>
+        <span class="hljs-string">&apos;cookie&apos;</span>    =&gt; [
+            <span class="hljs-string">&apos;enabled&apos;</span> =&gt; <span class="hljs-keyword">true</span>,
+            <span class="hljs-string">&apos;config&apos;</span>  =&gt; [
+                <span class="hljs-string">&apos;name&apos;</span>        =&gt; <span class="hljs-string">&apos;provallo&apos;</span>,
+                <span class="hljs-string">&apos;lifetime&apos;</span>    =&gt; <span class="hljs-string">&apos;1 year&apos;</span>,
+                <span class="hljs-string">&apos;autorefresh&apos;</span> =&gt; <span class="hljs-keyword">true</span>
+            ]
+        ],
+        <span class="hljs-comment">// The debug mode enables better exceptions</span>
+        <span class="hljs-string">&apos;debug&apos;</span> =&gt; <span class="hljs-keyword">true</span>
+    ],
+    <span class="hljs-comment">// Slim framework related settings</span>
+    <span class="hljs-string">&apos;settings&apos;</span> =&gt; [
+        <span class="hljs-string">&apos;displayErrorDetails&apos;</span> =&gt; <span class="hljs-keyword">true</span>
+    ]
+];
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="INSTALLATION.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Installation">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Configuration","level":"1.1.2","depth":2,"previous":{"title":"Installation","level":"1.1.1","depth":2,"path":"introduction/INSTALLATION.md","ref":"introduction/INSTALLATION.md","articles":[]},"dir":"ltr"},"config":{"plugins":["add-js-css"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"add-js-css":{"css":["./_assets/css/all.css"]},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Tommy <tyurderi@yahoo.de>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"ProVallo Documentation","gitbook":"*"},"file":{"path":"introduction/CONFIGURATION.md","mtime":"2018-11-20T08:16:29.124Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-20T08:17:09.633Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,4 +1,4 @@
-The installation is simple.
+# Installation
 
 ### Requirements
 - npm
